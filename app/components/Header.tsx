@@ -49,7 +49,7 @@ export default function Header() {
 
           <Button
             variant="ghost"
-            className="md:hidden text-gray-800 hover:text-gray-600"
+            className="md:hidden text-gray-300 hover:text-gray-600"
             onClick={toggleSidebar}
           >
             <Menu className="h-6 w-6" />
@@ -59,7 +59,7 @@ export default function Header() {
       </div>
 
       {/* Sidebar */}
-      <div className={`fixed inset-y-0 left-0 transform ${isSidebarOpen ? 'translate-x-0' : '-translate-x-full'} w-64 bg-[#1a76d2] shadow-lg transition-transform duration-300 ease-in-out z-50 md:hidden`}>
+      <div className={`fixed inset-y-0 left-0 transform ${isSidebarOpen ? 'translate-x-0' : '-translate-x-full'} w-64 bg-gray-800 shadow-lg transition-transform duration-300 ease-in-out z-50 md:hidden`}>
         <div className="flex flex-col h-full">
           <div className="flex justify-between items-center p-4 border-b border-gray-700">
             <h2 className="text-xl font-bold">Menu</h2>
