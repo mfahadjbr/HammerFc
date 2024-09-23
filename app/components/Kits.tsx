@@ -1,10 +1,11 @@
 'use client'
 
 import { useState, useEffect } from 'react'
-import Kits from './components/Kits'
+
 const images = [
-  '/1.png?height=500&width=1600&text=Match+Day',
-  '/22.jpg?height=500&width=600&text=Match+Day'
+  '/kit.jpg?height=500&width=600&text=Match+Day',
+  '/kit1.jpg?height=500&width=600&text=Match+Day',
+  '/kit2.jpg?height=500&width=600&text=Match+Day'
 ]
 
 export default function HeroSection() {
@@ -13,18 +14,22 @@ export default function HeroSection() {
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length)
-    },2000)
+    },4000)
 
     return () => clearInterval(interval)
   }, [])
 
   return (
     <>
-    <section className="relative h-[500px] m-2 overflow-hidden">
+    <div className='mt-[15px]'>
+        <h1 className='text-center text-4xl text-gray-600 font-semibold font-serif'>Kits</h1>
+    </div>
+    <div className='flex justify-center items-center'>
+    <section className="relative  h-[620px] w-[900px] m-2 overflow-hidden rounded-2xl object-fill shadow-2xl">
       {images.map((image, index) => (
         <div
           key={index}
-          className={`absolute inset-0 transition-opacity object-cover duration-1000 shadow-2xl ${
+          className={`absolute inset-0 transition-opacity duration-1000 object-fill ${
             index === currentImageIndex ? 'opacity-100' : 'opacity-0'
           }`}
           style={{
@@ -35,7 +40,7 @@ export default function HeroSection() {
         />
       ))}
     </section>
-    <Kits/>
+    </div>
     </>
   )
 }
